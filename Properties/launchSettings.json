@@ -1,12 +1,12 @@
 {
-  "profiles": {
-    "Todo": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:63198;http://localhost:63199"
-    }
-  }
+	"profiles": {
+		"Todo": {
+			"commandName": "Project",
+			"launchBrowser": false,
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			},
+			"applicationUrl": "https://localhost:63198;http://localhost:63199"
+		}
+	}
 }

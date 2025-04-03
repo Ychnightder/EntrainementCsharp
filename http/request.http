@@ -1,0 +1,15 @@
+### GET Todos
+GET https://localhost:63198/todos
+Content-Type: application/json
+###Get Todo by ID
+GET https://localhost:63198/todos/1
+### Get todo active
+GET https://localhost:63198/todos/active
+
+### Post create todo
+POST https://localhost:63198/todos
+Content-Type: application/json
+
+{
+  "title": "Todo 1"
+}

@@ -10,3 +10,13 @@ obj/
 *.userosscache
 *.suo
 *.userprefs
+
+
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+launchSettings.json
