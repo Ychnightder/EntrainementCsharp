@@ -20,3 +20,5 @@ obj/
 *.cache
 *.csproj.user
 launchSettings.json
+.idea/.idea.Todo/.idea/workspace.xml
+.idea/.idea.Todo/.idea/projectSettingsUpdater.xml

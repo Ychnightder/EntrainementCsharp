@@ -5,8 +5,7 @@
         private List<TodoDto> List_todoList = new List<TodoDto>()
         {
             new TodoDto ( 1 ,  "Csharp", DateTime.Now, null ),
-            new TodoDto ( 2 ,  "Lua", DateTime.Now, null ),
-            new TodoDto ( 3 ,  "Java", DateTime.Now, null )
+            new TodoDto ( 2 ,  "Lua", DateTime.Now, null )
         };
 
 
