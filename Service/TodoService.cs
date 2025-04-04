@@ -2,43 +2,56 @@
 {
     public class TodoService
     {
-        private List<Todo> List_todoList = new List<Todo>()
+        private List<TodoDto> List_todoList = new List<TodoDto>()
         {
-            new Todo {Id = 1 , Title = "Csharp"  },
-            new Todo {Id = 2 , Title = "Lua" }
+            new TodoDto ( 1 ,  "Csharp", DateTime.Now, null ),
+            new TodoDto ( 2 ,  "Lua", DateTime.Now, null ),
+            new TodoDto ( 3 ,  "Java", DateTime.Now, null )
         };
-        public List<Todo> getAll()
+
+
+        public List<TodoDto> getAll()
         {
             return List_todoList;
         }
-        public Todo getTodoById(int id)
+        public TodoDto getTodoById(int id)
         {
             return List_todoList.Find(todo => todo.Id == id) ?? throw new InvalidOperationException("Todo not found");
         }
-        public Todo AddTodo(string titre)
+        public TodoDto AddTodo(string titre)
         {
-            Todo todo = new Todo
-            {
-                Id = List_todoList.Max(todo => todo.Id) + 1,
-                Title = titre,
+            int id = List_todoList.Count == 0 ? 1 : List_todoList.Max(todo => todo.Id) + 1;
+            TodoDto todo = new TodoDto
+            (                
+                id,
+                 titre,
+                DateTime.Now,
+                 null
 
-            };
+            );
             List_todoList.Add(todo);
             return todo;
         }
-        public void RemoveTodo(int id) => List_todoList.RemoveAll(todo => todo.Id == id);
-        public void UpdateTodo(int id ,Todo item)
+        public bool RemoveTodo(int id) {
+                var todo = getTodoById(id);
+                if (todo != null) {
+                    List_todoList.Remove(todo);
+                    return true;
+                }
+                return false;
+        }      
+         public void UpdateTodo(int id ,TodoDto item)
         {
            RemoveTodo(id);
-              List_todoList.Add(new Todo
-            {
-                Id = id,
-                Title = item.Title,
-                StartDate = item.StartDate,
-                EndDate = item.EndDate
-            });
+              List_todoList.Add(new TodoDto
+            (
+                id,
+                item.Title,
+                item.StartDate,
+                 item.EndDate
+              ));
         }
-        public List<Todo> getTodoActives(){
+        public List<TodoDto> getTodoActives(){
             return List_todoList.Where(todo => !todo.EndDate.HasValue).ToList();
         }
     }

@@ -43,8 +43,8 @@ public class TodoServiceTests
     public void UpdateTodoTests()
     {
         var service = new TodoService();
-
-        service.UpdateTodo(1, "Updated Title", DateTime.Now.AddDays(1));
+        var todo = service.getTodoById(1);
+        service.UpdateTodo(1,todo);
         var result = service.getTodoById(1);
         Assert.Equal("Updated Title", result.Title);
         Assert.True(result.EndDate > DateTime.Now);
