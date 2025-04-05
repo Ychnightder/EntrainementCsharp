@@ -11,7 +11,7 @@ obj/
 *.suo
 *.userprefs
 
-
+lib/
 bin/
 obj/
 .vs/
