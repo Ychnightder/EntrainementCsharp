@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "HelloWord"; 
+   
+}
+@model Hello.Models.User
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <form asp-action="index" asp-controller="HelloWord" method="post" >
+            <div class="mb-3">
+                <label  asp-for="Name" class="form-label">Name : </label>
+                <input  asp-for="Name" class="form-control" type="text"  />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Great Me!</button>
+        </form>
+    </div>
+</div>
